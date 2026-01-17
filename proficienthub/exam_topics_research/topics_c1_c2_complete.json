@@ -1,0 +1,287 @@
+{
+  "cambridge_c1_advanced": {
+    "exam_type": "cambridge_c1_advanced",
+    "display_name": "Cambridge C1 Advanced (CAE)",
+    "cefr_level": "C1",
+    "vocabulary_size": "~5000-6000 words",
+    "official_sources": {
+      "handbook": "https://www.cambridgeenglish.org/images/167804-c1-advanced-handbook.pdf",
+      "exam_format": "https://www.cambridgeenglish.org/exams-and-tests/advanced/"
+    },
+    "topic_categories": {
+      "academic_contexts": [
+        "University education systems",
+        "Research methodologies",
+        "Academic writing and publication",
+        "Peer review processes",
+        "Academic conferences",
+        "Thesis and dissertation work",
+        "Postgraduate studies",
+        "Academic ethics and integrity"
+      ],
+      "professional_corporate": [
+        "Corporate governance",
+        "Business strategy and planning",
+        "Organizational behavior",
+        "Leadership and management theories",
+        "Professional development",
+        "Career advancement strategies",
+        "Executive decision-making",
+        "Corporate social responsibility"
+      ],
+      "science_technology": [
+        "Artificial intelligence development",
+        "Biotechnology advances",
+        "Space exploration",
+        "Quantum computing",
+        "Renewable energy technologies",
+        "Medical breakthroughs",
+        "Nanotechnology",
+        "Robotics and automation"
+      ],
+      "environment_sustainability": [
+        "Climate change mitigation strategies",
+        "Biodiversity conservation",
+        "Restoration of endangered species",
+        "Sustainable urban development",
+        "Circular economy models",
+        "Environmental policy frameworks",
+        "Green technology innovation",
+        "Ocean conservation efforts"
+      ],
+      "arts_culture_advanced": [
+        "Classical music theory and composition",
+        "Art history and movements",
+        "Literary criticism and analysis",
+        "Film theory and cinematography",
+        "Theater and performance art",
+        "Contemporary art trends",
+        "Cultural heritage preservation",
+        "Museum curation practices"
+      ],
+      "social_political": [
+        "Political systems and ideologies",
+        "Social justice movements",
+        "Economic inequality",
+        "Migration and refugee issues",
+        "Human rights frameworks",
+        "Democratic processes",
+        "International relations",
+        "Public policy analysis"
+      ],
+      "media_communication": [
+        "Media ethics and responsibility",
+        "Digital journalism",
+        "Information warfare",
+        "Social media influence",
+        "Propaganda analysis",
+        "Public relations strategies",
+        "Broadcasting regulations",
+        "Media ownership and control"
+      ],
+      "philosophy_ethics": [
+        "Ethical frameworks and theories",
+        "Moral philosophy",
+        "Applied ethics",
+        "Bioethics",
+        "Environmental ethics",
+        "Professional ethics",
+        "Philosophy of science",
+        "Existentialism and meaning"
+      ],
+      "specialized_fields": [
+        "Legal systems and jurisprudence",
+        "Medical specializations",
+        "Engineering disciplines",
+        "Architecture and urban planning",
+        "Economics and finance theory",
+        "Psychology and neuroscience",
+        "Linguistics and language acquisition",
+        "Anthropology and sociology"
+      ]
+    },
+    "reading_topics": [
+      "Academic journal articles",
+      "Specialized reports",
+      "Complex literary texts",
+      "Technical documentation",
+      "Policy papers",
+      "Research findings",
+      "Expert opinion pieces",
+      "Historical analyses"
+    ],
+    "listening_scenarios": [
+      "Academic lectures",
+      "Expert interviews",
+      "Specialist discussions",
+      "Conference presentations",
+      "Professional meetings",
+      "Documentary narratives",
+      "Radio documentaries",
+      "Panel discussions"
+    ],
+    "speaking_prompts": [
+      "Complex argumentation",
+      "Hypothetical scenario analysis",
+      "Critical evaluation",
+      "Abstract concept discussion",
+      "Speculative reasoning",
+      "Nuanced opinion expression",
+      "Comparative analysis",
+      "Problem-solving discussions"
+    ],
+    "writing_tasks": [
+      "Essays (220-260 words)",
+      "Reports (formal)",
+      "Proposals",
+      "Reviews (critical)",
+      "Letters/emails (formal/informal)",
+      "Articles (expert level)",
+      "Analytical writing",
+      "Persuasive writing"
+    ]
+  },
+  
+  "cambridge_c2_proficiency": {
+    "exam_type": "cambridge_c2_proficiency",
+    "display_name": "Cambridge C2 Proficiency (CPE)",
+    "cefr_level": "C2",
+    "vocabulary_size": "~8000+ words",
+    "official_sources": {
+      "handbook": "https://www.cambridgeenglish.org/exams-and-tests/proficiency/",
+      "format": "https://www.cambridgeenglish.org/exams-and-tests/proficiency/exam-format/"
+    },
+    "topic_categories": {
+      "all_contexts_mastery": [
+        "ANY academic subject at expert level",
+        "ANY professional context",
+        "Complex interdisciplinary topics",
+        "Highly specialized fields",
+        "Abstract theoretical concepts",
+        "Nuanced cultural phenomena",
+        "Sophisticated literary analysis",
+        "Advanced scientific discourse"
+      ],
+      "academic_research": [
+        "Original research publication",
+        "Meta-analysis and systematic reviews",
+        "Research methodology design",
+        "Statistical analysis interpretation",
+        "Academic peer review",
+        "Grant proposal writing",
+        "Research ethics committees",
+        "Interdisciplinary collaboration"
+      ],
+      "professional_expertise": [
+        "Executive leadership",
+        "Strategic planning at highest level",
+        "Crisis management",
+        "International negotiations",
+        "Policy formulation",
+        "Expert witness testimony",
+        "Professional consultation",
+        "Industry thought leadership"
+      ],
+      "cultural_literary": [
+        "Literary theory and criticism",
+        "Postmodern literary analysis",
+        "Comparative literature",
+        "Translation theory",
+        "Linguistic philosophy",
+        "Semiotics and symbolism",
+        "Cultural studies theory",
+        "Intertextuality analysis"
+      ],
+      "scientific_advanced": [
+        "Theoretical physics",
+        "Molecular biology",
+        "Neuroscience research",
+        "Climate modeling",
+        "Genomics and proteomics",
+        "Astrophysics",
+        "Materials science",
+        "Computational biology"
+      ],
+      "philosophical_abstract": [
+        "Epistemology",
+        "Ontology",
+        "Phenomenology",
+        "Hermeneutics",
+        "Critical theory",
+        "Poststructuralism",
+        "Philosophy of mind",
+        "Metaphysics"
+      ],
+      "socio_political_complex": [
+        "Geopolitical analysis",
+        "Economic policy theory",
+        "Sociological paradigms",
+        "Political philosophy",
+        "International law",
+        "Diplomatic relations",
+        "Global governance",
+        "Transnational movements"
+      ],
+      "specialized_professional": [
+        "Medical research specializations",
+        "Legal scholarship",
+        "Architectural theory",
+        "Economic modeling",
+        "Engineering innovation",
+        "Financial derivatives",
+        "Pharmaceutical development",
+        "Aerospace engineering"
+      ]
+    },
+    "reading_topics": [
+      "Academic monographs",
+      "Specialist journals",
+      "Complex literary works",
+      "Philosophical texts",
+      "Technical manuals (advanced)",
+      "Legal documents",
+      "Policy white papers",
+      "Scientific papers"
+    ],
+    "listening_scenarios": [
+      "Expert symposia",
+      "Specialized lectures",
+      "Academic debates",
+      "Professional conferences",
+      "Research presentations",
+      "Expert consultations",
+      "Intellectual discussions",
+      "Documentary series"
+    ],
+    "speaking_prompts": [
+      "Sophisticated argumentation",
+      "Subtle distinction making",
+      "Complex hypothesis formulation",
+      "Nuanced opinion expression",
+      "Abstract conceptualization",
+      "Critical theoretical discussion",
+      "Expert analysis",
+      "Philosophical reasoning"
+    ],
+    "writing_tasks": [
+      "Essays (280-320 words)",
+      "Letters/emails (any register)",
+      "Reports (expert level)",
+      "Reviews (sophisticated)",
+      "Articles (publication quality)",
+      "Proposals (comprehensive)",
+      "Academic writing",
+      "Professional correspondence"
+    ],
+    "proficiency_markers": [
+      "Near-native fluency",
+      "Subtle nuance expression",
+      "Idiomatic mastery",
+      "Register flexibility",
+      "Complex syntax control",
+      "Sophisticated vocabulary",
+      "Cultural competence",
+      "Precision in expression"
+    ]
+  }
+}

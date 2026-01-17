@@ -1,0 +1,411 @@
+{
+  "metadata": {
+    "research_date": "2026-01-14",
+    "source": "Official Cambridge Assessment English",
+    "researcher": "Claude",
+    "status": "Deep research based on official handbooks"
+  },
+  
+  "cambridge_a2_key": {
+    "exam_type": "cambridge_a2_key",
+    "display_name": "Cambridge A2 Key (KET)",
+    "cefr_level": "A2",
+    "vocabulary_size": "~1500 words",
+    "official_sources": {
+      "handbook": "https://www.cambridgeenglish.org/Images/610842-a2-key-handbook-for-teachers.pdf",
+      "vocabulary_list": "https://www.cambridgeenglish.org/images/23387-ket-schools-vocabulary-list.pdf",
+      "exam_format": "https://www.cambridgeenglish.org/exams-and-tests/qualifications/key/format/"
+    },
+    "topic_categories": {
+      "personal_information": [
+        "Names and personal details",
+        "Age and birthdays",
+        "Family members and relationships",
+        "Friends and acquaintances",
+        "Physical descriptions (basic)",
+        "Personal possessions"
+      ],
+      "daily_life": [
+        "Home and accommodation",
+        "Daily routines",
+        "School life",
+        "Simple jobs and occupations",
+        "Time and dates",
+        "Weather (basic)"
+      ],
+      "food_and_drink": [
+        "Meals (breakfast, lunch, dinner)",
+        "Basic food items",
+        "Drinks",
+        "Restaurants and cafes",
+        "Shopping for food",
+        "Simple recipes"
+      ],
+      "hobbies_and_leisure": [
+        "Sports and games",
+        "Free time activities",
+        "Hobbies and interests",
+        "Music and entertainment",
+        "Reading and TV",
+        "Weekend activities"
+      ],
+      "travel_and_places": [
+        "Transport (bus, train, car, plane)",
+        "Directions (basic)",
+        "Holidays and trips",
+        "Countries and cities",
+        "Places in town",
+        "Hotels (basic)"
+      ],
+      "shopping_and_services": [
+        "Shops and stores",
+        "Clothes and accessories",
+        "Prices and money",
+        "Colors and sizes",
+        "Post office and bank (simple)",
+        "Buying and selling"
+      ],
+      "health_and_body": [
+        "Parts of the body",
+        "Basic health problems",
+        "Doctor and dentist",
+        "Medicines (basic)",
+        "Feeling unwell",
+        "Fitness (simple)"
+      ],
+      "work_and_education": [
+        "School subjects",
+        "Classrooms and equipment",
+        "Simple jobs",
+        "Workplace (basic)",
+        "Learning activities",
+        "Career plans (simple)"
+      ]
+    },
+    "excluded_topics": [
+      "War and conflict",
+      "Politics",
+      "Sensitive social issues",
+      "Complex abstract concepts"
+    ],
+    "reading_topics": [
+      "Short everyday messages",
+      "Simple notices and signs",
+      "Basic advertisements",
+      "Short emails and notes",
+      "Simple articles",
+      "Basic instructions"
+    ],
+    "listening_scenarios": [
+      "Simple conversations",
+      "Basic announcements",
+      "Short monologues",
+      "Everyday interactions",
+      "Phone messages",
+      "Simple descriptions"
+    ],
+    "speaking_prompts": [
+      "Personal information",
+      "Describing daily activities",
+      "Talking about likes/dislikes",
+      "Simple future plans",
+      "Describing pictures",
+      "Basic opinions"
+    ],
+    "writing_tasks": [
+      "Short emails (25+ words)",
+      "Notes and messages",
+      "Simple stories (35+ words)",
+      "Picture-based narratives",
+      "Responding to invitations",
+      "Basic letters"
+    ]
+  },
+  
+  "cambridge_b1_preliminary": {
+    "exam_type": "cambridge_b1_preliminary",
+    "display_name": "Cambridge B1 Preliminary (PET)",
+    "cefr_level": "B1",
+    "vocabulary_size": "~2500 words",
+    "official_sources": {
+      "handbook": "https://www.cambridgeenglish.org/Images/168143-cambridge-english-preliminary-teachers-handbook.pdf",
+      "vocabulary_list": "Available from Cambridge ESOL Teacher Support",
+      "exam_format": "https://www.cambridgeenglish.org/exams-and-tests/preliminary/"
+    },
+    "topic_categories": {
+      "personal_interests": [
+        "Hobbies and leisure activities",
+        "Sports and fitness",
+        "Entertainment (movies, music, theater)",
+        "Reading preferences",
+        "Creative activities",
+        "Collections and interests"
+      ],
+      "daily_life": [
+        "Home and family life",
+        "Daily routines and habits",
+        "Relations with other people",
+        "House and home",
+        "Services (bank, post, repair)",
+        "Personal experiences"
+      ],
+      "education": [
+        "School and university",
+        "Subjects and courses",
+        "Exams and qualifications",
+        "Study methods",
+        "Future educational plans",
+        "Learning experiences"
+      ],
+      "work_and_employment": [
+        "Jobs and occupations",
+        "Workplace environments",
+        "Work experiences",
+        "Career aspirations",
+        "Employment conditions",
+        "Part-time and full-time work"
+      ],
+      "technology": [
+        "Computers and internet",
+        "Mobile phones",
+        "Social media (basic)",
+        "Technology in daily life",
+        "Online activities",
+        "Digital communication"
+      ],
+      "entertainment_and_media": [
+        "TV programs and films",
+        "Radio and podcasts",
+        "Newspapers and magazines",
+        "Books and literature",
+        "Music and concerts",
+        "Theater and events"
+      ],
+      "shopping": [
+        "Clothes and fashion",
+        "Consumer goods",
+        "Shopping experiences",
+        "Online shopping",
+        "Markets and stores",
+        "Prices and value"
+      ],
+      "food_and_health": [
+        "Healthy eating",
+        "Restaurants and cafes",
+        "Cooking and recipes",
+        "Food preferences",
+        "Health and fitness",
+        "Medical care"
+      ],
+      "travel": [
+        "Holidays and tourism",
+        "Transport and travel",
+        "Accommodations",
+        "Tourist attractions",
+        "Travel experiences",
+        "Different countries and cultures"
+      ],
+      "environment": [
+        "Natural world",
+        "Animals and wildlife",
+        "Environmental issues (basic)",
+        "Weather and climate",
+        "Geography",
+        "Conservation (simple)"
+      ],
+      "language": [
+        "Learning languages",
+        "Communication",
+        "Using English",
+        "Translation",
+        "Language skills",
+        "Multilingualism"
+      ]
+    },
+    "reading_topics": [
+      "Magazine articles",
+      "Newspaper reports",
+      "Advertisements and notices",
+      "Emails and letters",
+      "Reviews and reports",
+      "Informational texts"
+    ],
+    "listening_scenarios": [
+      "Conversations and dialogues",
+      "Announcements (public places)",
+      "Radio programs",
+      "Short talks and presentations",
+      "Instructions and directions",
+      "Descriptions and narratives"
+    ],
+    "speaking_prompts": [
+      "Personal opinions",
+      "Describing experiences",
+      "Comparing and contrasting",
+      "Making suggestions",
+      "Discussing preferences",
+      "Future plans and ambitions"
+    ],
+    "writing_tasks": [
+      "Informal emails/letters (100 words)",
+      "Articles (magazine/newsletter)",
+      "Stories",
+      "Short messages (35-45 words)",
+      "Reviews",
+      "Reports (simple)"
+    ]
+  },
+  
+  "cambridge_b2_first": {
+    "exam_type": "cambridge_b2_first",
+    "display_name": "Cambridge B2 First (FCE)",
+    "cefr_level": "B2",
+    "vocabulary_size": "~3500-4000 words",
+    "official_sources": {
+      "handbook": "https://www.cambridgeenglish.org/images/167791-b2-first-handbook.pdf",
+      "exam_format": "https://www.cambridgeenglish.org/exams-and-tests/first/"
+    },
+    "topic_categories": {
+      "education_and_learning": [
+        "Educational systems",
+        "Academic subjects and courses",
+        "Study techniques and methods",
+        "University life",
+        "Research and projects",
+        "Distance learning",
+        "Lifelong learning",
+        "Educational technology"
+      ],
+      "work_and_business": [
+        "Career development",
+        "Job applications and interviews",
+        "Workplace culture",
+        "Professional skills",
+        "Business trends",
+        "Entrepreneurship",
+        "Work-life balance",
+        "Unemployment and economy"
+      ],
+      "technology_and_innovation": [
+        "Digital revolution",
+        "Social media and networking",
+        "Artificial intelligence",
+        "Technological advances",
+        "Cybersecurity",
+        "Future technology",
+        "Impact of technology on society",
+        "Online behavior"
+      ],
+      "environment_and_sustainability": [
+        "Climate change",
+        "Environmental protection",
+        "Renewable energy",
+        "Pollution and waste",
+        "Conservation efforts",
+        "Sustainable living",
+        "Wildlife protection",
+        "Green technology"
+      ],
+      "health_and_lifestyle": [
+        "Health and fitness trends",
+        "Mental health",
+        "Diet and nutrition",
+        "Alternative medicine",
+        "Healthcare systems",
+        "Stress management",
+        "Healthy lifestyles",
+        "Medical advances"
+      ],
+      "arts_and_culture": [
+        "Literature and books",
+        "Music and performing arts",
+        "Film and television",
+        "Visual arts",
+        "Cultural events",
+        "Museums and galleries",
+        "Cultural identity",
+        "Popular culture"
+      ],
+      "society_and_social_issues": [
+        "Social problems",
+        "Community life",
+        "Generation gaps",
+        "Urban vs rural living",
+        "Immigration and multiculturalism",
+        "Social media influence",
+        "Volunteering and charity",
+        "Equality and rights"
+      ],
+      "travel_and_tourism": [
+        "Travel experiences",
+        "Tourism industry",
+        "Cultural tourism",
+        "Adventure travel",
+        "Responsible tourism",
+        "Travel destinations",
+        "Impact of tourism",
+        "Solo travel"
+      ],
+      "communication": [
+        "Forms of communication",
+        "Cross-cultural communication",
+        "Language learning",
+        "Public speaking",
+        "Written communication",
+        "Miscommunication",
+        "Communication technology",
+        "Body language"
+      ],
+      "personal_development": [
+        "Personal goals",
+        "Life experiences",
+        "Decision making",
+        "Challenges and achievements",
+        "Self-improvement",
+        "Time management",
+        "Motivation and success",
+        "Personal values"
+      ]
+    },
+    "reading_topics": [
+      "Magazine and newspaper articles",
+      "Reviews (books, films, products)",
+      "Reports and essays",
+      "Fiction extracts",
+      "Opinion pieces",
+      "Scientific/technical texts",
+      "Biographical texts",
+      "Promotional materials"
+    ],
+    "listening_scenarios": [
+      "Interviews",
+      "Radio broadcasts",
+      "Presentations and lectures",
+      "Conversations (social/professional)",
+      "News reports",
+      "Podcasts",
+      "Discussions and debates",
+      "Announcements"
+    ],
+    "speaking_prompts": [
+      "Expressing and justifying opinions",
+      "Discussing hypothetical situations",
+      "Comparing and evaluating",
+      "Analyzing problems and solutions",
+      "Speculating about future",
+      "Discussing advantages/disadvantages",
+      "Personal anecdotes with reflection",
+      "Abstract concepts discussion"
+    ],
+    "writing_tasks": [
+      "Essays (140-190 words)",
+      "Articles",
+      "Reviews",
+      "Reports",
+      "Formal/informal emails or letters",
+      "Proposals (optional)",
+      "Argumentative writing",
+      "Descriptive/narrative writing"
+    ]
+  }
+}

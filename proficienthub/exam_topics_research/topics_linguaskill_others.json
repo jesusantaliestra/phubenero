@@ -1,0 +1,501 @@
+{
+  "linguaskill": {
+    "exam_type": "linguaskill",
+    "display_name": "Linguaskill",
+    "provider": "Cambridge Assessment English",
+    "test_type": "Adaptive (A1-C1+)",
+    "official_sources": {
+      "main_site": "https://www.cambridgeenglish.org/exams-and-tests/linguaskill/",
+      "information": "https://www.cambridgeenglish.org/linguaskill/information/"
+    },
+    "unique_features": [
+      "AI-powered adaptive testing",
+      "Results in 48 hours",
+      "4 modular tests (can take separately)",
+      "Used by 600+ organizations globally",
+      "Replaced BULATS in 2019"
+    ],
+    "topic_categories": {
+      "everyday_life": [
+        "Daily routines and activities",
+        "Family and relationships",
+        "Social events and gatherings",
+        "Personal interests",
+        "Food and dining",
+        "Health and fitness",
+        "Shopping experiences",
+        "Entertainment choices"
+      ],
+      "workplace_general": [
+        "Office environment",
+        "Business meetings",
+        "Email correspondence",
+        "Phone conversations",
+        "Customer service",
+        "Team collaboration",
+        "Work schedules",
+        "Professional development"
+      ],
+      "travel_services": [
+        "Transport and travel",
+        "Hotels and accommodation",
+        "Tourist information",
+        "Travel arrangements",
+        "Cultural experiences",
+        "Navigation and directions",
+        "Travel problems",
+        "International destinations"
+      ],
+      "education_training": [
+        "Learning experiences",
+        "Training programs",
+        "Educational goals",
+        "Study methods",
+        "Online learning",
+        "Skills development",
+        "Workshops and seminars",
+        "Professional qualifications"
+      ],
+      "technology_digital": [
+        "Digital communication",
+        "Online services",
+        "Social media (basic)",
+        "Mobile technology",
+        "E-commerce",
+        "Digital security",
+        "Software applications",
+        "Remote work tools"
+      ],
+      "current_affairs": [
+        "News and media",
+        "Social trends",
+        "Environmental awareness",
+        "Community issues",
+        "Cultural events",
+        "Scientific developments",
+        "Economic topics",
+        "Global events"
+      ]
+    },
+    "difficulty_levels": {
+      "A1_A2": "Basic everyday topics",
+      "B1": "Intermediate practical contexts",
+      "B2": "Complex workplace situations",
+      "C1": "Advanced professional discourse"
+    }
+  },
+  
+  "linguaskill_business": {
+    "exam_type": "linguaskill_business",
+    "display_name": "Linguaskill Business",
+    "provider": "Cambridge Assessment English",
+    "test_type": "Adaptive Business English (A1-C1+)",
+    "official_sources": {
+      "main_site": "https://www.cambridgeenglish.org/exams-and-tests/linguaskill/",
+      "for_organizations": "https://www.cambridgeenglish.org/linguaskill/for-organisations/"
+    },
+    "topic_categories": {
+      "corporate_communication": [
+        "Internal communications",
+        "Cross-departmental collaboration",
+        "Executive updates",
+        "Company announcements",
+        "Policy communications",
+        "Crisis communication",
+        "Change management messaging",
+        "Stakeholder relations"
+      ],
+      "business_operations": [
+        "Supply chain management",
+        "Inventory control",
+        "Quality assurance",
+        "Production processes",
+        "Logistics and distribution",
+        "Vendor management",
+        "Process improvement",
+        "Operational efficiency"
+      ],
+      "sales_marketing": [
+        "Product launches",
+        "Marketing campaigns",
+        "Sales strategies",
+        "Customer acquisition",
+        "Brand management",
+        "Market research",
+        "Competitive analysis",
+        "Digital marketing"
+      ],
+      "finance_accounting": [
+        "Budget planning",
+        "Financial reports",
+        "Cost analysis",
+        "Investment decisions",
+        "Cash flow management",
+        "Audit procedures",
+        "Tax compliance",
+        "Financial forecasting"
+      ],
+      "human_resources": [
+        "Recruitment processes",
+        "Performance management",
+        "Employee development",
+        "Compensation and benefits",
+        "Workplace policies",
+        "Labor relations",
+        "Diversity and inclusion",
+        "Talent retention"
+      ],
+      "meetings_presentations": [
+        "Board meetings",
+        "Client presentations",
+        "Product demonstrations",
+        "Sales pitches",
+        "Team briefings",
+        "Quarterly reviews",
+        "Strategy sessions",
+        "Training sessions"
+      ],
+      "negotiations_contracts": [
+        "Contract terms",
+        "Partnership agreements",
+        "Price negotiations",
+        "Service level agreements",
+        "Vendor contracts",
+        "Employment contracts",
+        "Legal considerations",
+        "Dispute resolution"
+      ],
+      "international_business": [
+        "Cross-border trade",
+        "International partnerships",
+        "Global markets",
+        "Cultural business practices",
+        "Foreign investment",
+        "Import/export",
+        "International regulations",
+        "Currency considerations"
+      ],
+      "business_technology": [
+        "Digital transformation",
+        "Enterprise software",
+        "Cloud computing",
+        "Data analytics",
+        "Cybersecurity",
+        "E-commerce platforms",
+        "Automation tools",
+        "Business intelligence"
+      ]
+    }
+  },
+  
+  "toefl_itp": {
+    "exam_type": "toefl_itp",
+    "display_name": "TOEFL ITP",
+    "provider": "ETS",
+    "test_type": "Paper-based institutional",
+    "official_sources": {
+      "main_site": "https://www.ets.org/toefl_itp.html",
+      "test_content": "https://www.ets.org/toefl_itp/test-takers/about/content.html"
+    },
+    "topic_categories": {
+      "note": "85% overlap with TOEFL iBT topics - paper-based format",
+      "academic_contexts": [
+        "University lectures",
+        "Campus conversations",
+        "Academic discussions",
+        "Study groups",
+        "Library research",
+        "Academic advising",
+        "Course selection",
+        "Exam preparation"
+      ],
+      "natural_sciences": [
+        "Biology and ecology",
+        "Chemistry fundamentals",
+        "Physics concepts",
+        "Earth sciences",
+        "Astronomy",
+        "Environmental science",
+        "Scientific method",
+        "Laboratory procedures"
+      ],
+      "social_sciences": [
+        "Psychology",
+        "Sociology",
+        "Economics",
+        "Political science",
+        "Anthropology",
+        "History",
+        "Geography",
+        "Education"
+      ],
+      "arts_humanities": [
+        "Literature",
+        "Philosophy",
+        "Art history",
+        "Music",
+        "Theater",
+        "Languages",
+        "Cultural studies",
+        "Religious studies"
+      ]
+    },
+    "differences_from_ibt": [
+      "Paper-based format",
+      "Multiple choice only",
+      "No speaking section",
+      "Institutional use only",
+      "Lower cost",
+      "Faster results"
+    ]
+  },
+  
+  "trinity_ise": {
+    "exam_type": "trinity_ise",
+    "display_name": "Trinity ISE (Integrated Skills in English)",
+    "provider": "Trinity College London",
+    "levels": "ISE Foundation (A2) to ISE IV (C2)",
+    "official_sources": {
+      "main_site": "https://www.trinitycollege.com/qualifications/english-language/ISE",
+      "specifications": "https://www.trinitycollege.com/resource/?id=7370"
+    },
+    "unique_features": [
+      "Portfolio-based assessment",
+      "Controlled assessment (exam)",
+      "Integrated reading/writing + speaking/listening",
+      "Recognized for UK visas (SELT)"
+    ],
+    "topic_categories": {
+      "personal_social": [
+        "Personal experiences",
+        "Family and friends",
+        "Social life",
+        "Leisure activities",
+        "Travel experiences",
+        "Daily routines",
+        "Lifestyle choices",
+        "Personal goals"
+      ],
+      "education_work": [
+        "Educational systems",
+        "Learning experiences",
+        "Work environments",
+        "Career paths",
+        "Professional development",
+        "Training opportunities",
+        "Academic research",
+        "Workplace issues"
+      ],
+      "arts_culture": [
+        "Music and performance",
+        "Visual arts",
+        "Literature",
+        "Film and media",
+        "Cultural traditions",
+        "Heritage and history",
+        "Contemporary culture",
+        "Creative industries"
+      ],
+      "science_technology": [
+        "Scientific discoveries",
+        "Technological advances",
+        "Digital innovation",
+        "Medical developments",
+        "Environmental technology",
+        "Space exploration",
+        "Future technology",
+        "Scientific ethics"
+      ],
+      "environment_society": [
+        "Environmental issues",
+        "Climate change",
+        "Sustainability",
+        "Conservation",
+        "Social justice",
+        "Community development",
+        "Global challenges",
+        "Ethical issues"
+      ],
+      "current_affairs": [
+        "News and events",
+        "Political developments",
+        "Economic trends",
+        "Social movements",
+        "International relations",
+        "Cultural events",
+        "Scientific breakthroughs",
+        "Historical perspectives"
+      ]
+    }
+  },
+  
+  "oxford_test": {
+    "exam_type": "oxford_test",
+    "display_name": "Oxford Test of English",
+    "provider": "Oxford University Press",
+    "test_type": "Modular adaptive (A2-C1)",
+    "official_sources": {
+      "main_site": "https://www.oxfordenglishtesting.com/",
+      "what_is_oxford_test": "https://www.oxfordenglishtesting.com/what-is-the-oxford-test-of-english/"
+    },
+    "unique_features": [
+      "100% online delivery",
+      "Modular (take any section)",
+      "Adaptive difficulty",
+      "Results in 2 weeks",
+      "Practical everyday English focus",
+      "Shorter than traditional exams"
+    ],
+    "topic_categories": {
+      "everyday_practical": [
+        "Shopping and services",
+        "Food and dining",
+        "Transportation",
+        "Accommodation",
+        "Health services",
+        "Banking",
+        "Post office",
+        "Public services"
+      ],
+      "social_leisure": [
+        "Social activities",
+        "Entertainment",
+        "Sports and hobbies",
+        "Holidays and travel",
+        "Celebrations",
+        "Cultural events",
+        "Recreational activities",
+        "Social media"
+      ],
+      "work_study": [
+        "Workplace communication",
+        "Job applications",
+        "Professional meetings",
+        "Educational settings",
+        "Training courses",
+        "Career development",
+        "Study abroad",
+        "Professional correspondence"
+      ],
+      "technology_media": [
+        "Digital communication",
+        "Online services",
+        "Technology in daily life",
+        "Social networking",
+        "News and media",
+        "Digital entertainment",
+        "Mobile technology",
+        "E-commerce"
+      ],
+      "health_lifestyle": [
+        "Healthy living",
+        "Medical appointments",
+        "Fitness activities",
+        "Nutrition",
+        "Mental wellbeing",
+        "Personal care",
+        "Healthcare systems",
+        "Lifestyle choices"
+      ],
+      "community_environment": [
+        "Local community",
+        "Environmental issues",
+        "Sustainability",
+        "Public spaces",
+        "Community services",
+        "Neighborhood life",
+        "Green initiatives",
+        "Urban living"
+      ]
+    }
+  },
+  
+  "aptis": {
+    "exam_type": "aptis",
+    "display_name": "APTIS",
+    "provider": "British Council",
+    "test_type": "Flexible modular (A1-C)",
+    "official_sources": {
+      "main_site": "https://www.britishcouncil.org/aptis",
+      "test_format": "https://www.britishcouncil.org/exam/aptis/prepare/format"
+    },
+    "unique_features": [
+      "Highly customizable",
+      "Core + optional components",
+      "Available in 50+ countries",
+      "Fast results (48-72 hours)",
+      "Can test specific skills only",
+      "Organization-specific versions"
+    ],
+    "core_component_topics": {
+      "personal_information": [
+        "Name and contact details",
+        "Family and relationships",
+        "Home and accommodation",
+        "Work and study",
+        "Daily routines",
+        "Personal interests",
+        "Life experiences",
+        "Future plans"
+      ],
+      "daily_activities": [
+        "Typical day",
+        "Work schedule",
+        "Leisure time",
+        "Weekend activities",
+        "Holiday plans",
+        "Shopping habits",
+        "Exercise routine",
+        "Social life"
+      ],
+      "hobbies_interests": [
+        "Sports and games",
+        "Arts and crafts",
+        "Music and performance",
+        "Reading and writing",
+        "Travel and exploration",
+        "Technology interests",
+        "Collecting",
+        "Creative pursuits"
+      ]
+    },
+    "optional_modules": {
+      "aptis_general": [
+        "Everyday situations",
+        "Social contexts",
+        "Work environments",
+        "Study settings",
+        "Travel contexts",
+        "Entertainment",
+        "Services",
+        "Current events"
+      ],
+      "aptis_advanced": [
+        "Academic discourse",
+        "Professional contexts",
+        "Complex social issues",
+        "Abstract concepts",
+        "Specialized fields",
+        "Critical analysis",
+        "Expert discussions",
+        "Advanced topics"
+      ],
+      "aptis_for_teachers": [
+        "Classroom management",
+        "Lesson planning",
+        "Student assessment",
+        "Educational theory",
+        "Teaching methodology",
+        "Curriculum development",
+        "Professional development",
+        "Educational technology"
+      ]
+    },
+    "customizable_features": [
+      "Organizations can specify topics",
+      "Can focus on specific industries",
+      "Adjustable difficulty levels",
+      "Sector-specific vocabulary"
+    ]
+  }
+}
