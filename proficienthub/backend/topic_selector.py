@@ -6,9 +6,71 @@ Based on official academic sources and CEFR levels
 
 import random
 import json
+import threading
+import re
 from pathlib import Path
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional, Set, Any
 from datetime import datetime
+from collections import OrderedDict
+from functools import lru_cache
+
+
+class LRUCache:
+    """Thread-safe LRU cache for topic history to prevent memory leaks."""
+
+    def __init__(self, max_size: int = 10000):
+        self._cache: OrderedDict = OrderedDict()
+        self._max_size = max_size
+        self._lock = threading.Lock()
+
+    def get(self, key: str, default: Any = None) -> Any:
+        with self._lock:
+            if key in self._cache:
+                self._cache.move_to_end(key)
+                return self._cache[key]
+            return default
+
+    def set(self, key: str, value: Any) -> None:
+        with self._lock:
+            if key in self._cache:
+                self._cache.move_to_end(key)
+            else:
+                if len(self._cache) >= self._max_size:
+                    self._cache.popitem(last=False)
+            self._cache[key] = value
+
+    def __contains__(self, key: str) -> bool:
+        with self._lock:
+            return key in self._cache
+
+
+class TopicHistory:
+    """
+    Thread-safe topic history tracker with proper ordering.
+    Uses a deque-like structure to maintain insertion order.
+    """
+
+    def __init__(self, max_items: int = 5):
+        self._items: List[str] = []
+        self._max_items = max_items
+        self._lock = threading.Lock()
+
+    def add(self, item: str) -> None:
+        with self._lock:
+            if item in self._items:
+                self._items.remove(item)
+            self._items.append(item)
+            if len(self._items) > self._max_items:
+                self._items.pop(0)
+
+    def __contains__(self, item: str) -> bool:
+        with self._lock:
+            return item in self._items
+
+    def to_set(self) -> Set[str]:
+        with self._lock:
+            return set(self._items)
+
 
 class TopicSelector:
     """
@@ -16,34 +78,134 @@ class TopicSelector:
     Ensures academic quality and variety
     """
     
-    def __init__(self, topics_dir: str = '../exam_topics_research'):
+    # Valid topic file names (whitelist for security)
+    VALID_TOPIC_FILES = frozenset([
+        'cambridge_topics_official.json',
+        'topics_c1_c2_complete.json',
+        'topics_linguaskill_others.json'
+    ])
+
+    # Configuration constants
+    MIN_CATEGORIES = 3
+    MIN_TOPICS_PER_CATEGORY = 5
+    MAX_HISTORY_ITEMS = 5
+    MAX_CACHE_SIZE = 10000
+
+    def __init__(self, topics_dir: Optional[str] = None):
         """
         Initialize topic selector with all exam topics
-        
+
         Args:
-            topics_dir: Directory containing topic JSON files
+            topics_dir: Directory containing topic JSON files (must be relative or validated)
         """
-        self.topics_dir = Path(topics_dir)
-        self.topics = self._load_all_topics()
-        self.topic_history = {}  # Track used topics per user
+        # Validate and sanitize topics_dir to prevent path traversal
+        if topics_dir is None:
+            topics_dir = '../exam_topics_research'
+
+        self.topics_dir = self._validate_topics_dir(topics_dir)
+        self.topics: Dict[str, Any] = {}
+        self._load_lock = threading.Lock()
+        self._topics_loaded = False
+
+        # Use LRU cache to prevent memory leaks
+        self._topic_history_cache = LRUCache(max_size=self.MAX_CACHE_SIZE)
+
+        # Lazy load topics
+        self._ensure_topics_loaded()
+
+    def _validate_topics_dir(self, topics_dir: str) -> Path:
+        """
+        Validate topics directory to prevent path traversal attacks.
+
+        Args:
+            topics_dir: Directory path to validate
+
+        Returns:
+            Validated Path object
+
+        Raises:
+            ValueError: If path is invalid or attempts path traversal
+        """
+        # Check for path traversal patterns
+        if re.search(r'\.\.[/\\]', topics_dir) and not topics_dir.startswith('..'):
+            raise ValueError("Invalid topics directory: path traversal detected")
+
+        path = Path(topics_dir)
+
+        # If relative path, resolve against current file's directory
+        if not path.is_absolute():
+            base_dir = Path(__file__).parent
+            path = (base_dir / path).resolve()
+
+        # Ensure the resolved path doesn't escape the project directory
+        project_root = Path(__file__).parent.parent.resolve()
+        try:
+            path.resolve().relative_to(project_root)
+        except ValueError:
+            # Allow parent directory for exam_topics_research
+            if 'exam_topics_research' not in str(path):
+                raise ValueError(f"Invalid topics directory: {topics_dir}")
+
+        return path
+
+    def _ensure_topics_loaded(self) -> None:
+        """Thread-safe lazy loading of topics."""
+        if self._topics_loaded:
+            return
+
+        with self._load_lock:
+            if not self._topics_loaded:
+                self.topics = self._load_all_topics()
+                self._topics_loaded = True
         
-    def _load_all_topics(self) -> Dict:
-        """Load all topic data from JSON files"""
-        all_topics = {}
-        
-        topic_files = [
-            'cambridge_topics_official.json',
-            'topics_c1_c2_complete.json',
-            'topics_linguaskill_others.json'
-        ]
-        
-        for filename in topic_files:
+    def _load_all_topics(self) -> Dict[str, Any]:
+        """
+        Load all topic data from JSON files with proper error handling.
+
+        Returns:
+            Dictionary with all exam topics
+
+        Raises:
+            RuntimeError: If no topic files could be loaded
+        """
+        all_topics: Dict[str, Any] = {}
+        errors: List[str] = []
+
+        for filename in self.VALID_TOPIC_FILES:
             filepath = self.topics_dir / filename
-            if filepath.exists():
+
+            if not filepath.exists():
+                continue
+
+            try:
                 with open(filepath, 'r', encoding='utf-8') as f:
                     data = json.load(f)
+
+                    if not isinstance(data, dict):
+                        errors.append(f"{filename}: Expected dict, got {type(data).__name__}")
+                        continue
+
                     all_topics.update(data)
-        
+
+            except json.JSONDecodeError as e:
+                errors.append(f"{filename}: Invalid JSON - {e}")
+            except PermissionError:
+                errors.append(f"{filename}: Permission denied")
+            except OSError as e:
+                errors.append(f"{filename}: OS error - {e}")
+
+        if errors:
+            import logging
+            logger = logging.getLogger(__name__)
+            for error in errors:
+                logger.warning(f"Topic loading warning: {error}")
+
+        if not all_topics:
+            raise RuntimeError(
+                f"No topics could be loaded from {self.topics_dir}. "
+                f"Errors: {errors if errors else 'No valid files found'}"
+            )
+
         return all_topics
     
     def get_exam_info(self, exam_type: str) -> Optional[Dict]:
@@ -153,43 +315,46 @@ class TopicSelector:
         return list(set(topic_pool))  # Remove duplicates
     
     def _filter_recent_topics(
-        self, 
-        topic_pool: List[str], 
-        user_id: str, 
-        exam_type: str, 
+        self,
+        topic_pool: List[str],
+        user_id: str,
+        exam_type: str,
         skill: str
     ) -> List[str]:
         """
-        Filter out recently used topics
-        
+        Filter out recently used topics.
+
         Args:
             topic_pool: Available topics
             user_id: User identifier
             exam_type: Exam type
             skill: Skill type
-            
+
         Returns:
-            Filtered topic list
+            Filtered topic list (never empty - returns original if all filtered)
         """
-        # Get recent topics for this user/exam/skill
         key = f"{user_id}_{exam_type}_{skill}"
-        recent_topics = self.topic_history.get(key, set())
-        
-        # Filter out recent (last 5 uses)
+        history = self._topic_history_cache.get(key)
+
+        if history is None:
+            return topic_pool
+
+        recent_topics = history.to_set()
         filtered = [t for t in topic_pool if t not in recent_topics]
-        
+
         return filtered if filtered else topic_pool
-    
+
     def _track_topic_usage(
-        self, 
-        user_id: str, 
-        exam_type: str, 
-        skill: str, 
+        self,
+        user_id: str,
+        exam_type: str,
+        skill: str,
         topic: str
-    ):
+    ) -> None:
         """
-        Track topic usage to avoid repetition
-        
+        Track topic usage to avoid repetition.
+        Uses thread-safe TopicHistory with proper ordering.
+
         Args:
             user_id: User identifier
             exam_type: Exam type
@@ -197,17 +362,13 @@ class TopicSelector:
             topic: Selected topic
         """
         key = f"{user_id}_{exam_type}_{skill}"
-        
-        if key not in self.topic_history:
-            self.topic_history[key] = set()
-        
-        self.topic_history[key].add(topic)
-        
-        # Keep only last 5 topics
-        if len(self.topic_history[key]) > 5:
-            # Remove oldest (convert to list, remove first, back to set)
-            topics_list = list(self.topic_history[key])
-            self.topic_history[key] = set(topics_list[-5:])
+
+        history = self._topic_history_cache.get(key)
+        if history is None:
+            history = TopicHistory(max_items=self.MAX_HISTORY_ITEMS)
+            self._topic_history_cache.set(key, history)
+
+        history.add(topic)
     
     def get_topic_categories(self, exam_type: str) -> List[str]:
         """
@@ -293,23 +454,19 @@ class TopicSelector:
         
         exam_data = self.topics[exam_type]
         categories = exam_data.get('topic_categories', {})
-        
-        # Minimum requirements
-        MIN_CATEGORIES = 3
-        MIN_TOPICS_PER_CATEGORY = 5
-        
+
         issues = []
-        
-        if len(categories) < MIN_CATEGORIES:
+
+        if len(categories) < self.MIN_CATEGORIES:
             issues.append(
-                f'Only {len(categories)} categories (minimum {MIN_CATEGORIES})'
+                f'Only {len(categories)} categories (minimum {self.MIN_CATEGORIES})'
             )
-        
+
         for cat, topics in categories.items():
-            if len(topics) < MIN_TOPICS_PER_CATEGORY:
+            if len(topics) < self.MIN_TOPICS_PER_CATEGORY:
                 issues.append(
                     f'Category "{cat}" has only {len(topics)} topics '
-                    f'(minimum {MIN_TOPICS_PER_CATEGORY})'
+                    f'(minimum {self.MIN_TOPICS_PER_CATEGORY})'
                 )
         
         return {
@@ -400,15 +557,37 @@ class TopicSelector:
         return results
 
 
-# Singleton instance
-_topic_selector = None
+# Thread-safe singleton implementation
+_topic_selector: Optional[TopicSelector] = None
+_singleton_lock = threading.Lock()
+
 
 def get_topic_selector() -> TopicSelector:
-    """Get or create singleton TopicSelector instance"""
+    """
+    Get or create singleton TopicSelector instance.
+    Thread-safe implementation using double-checked locking.
+
+    Returns:
+        TopicSelector singleton instance
+    """
     global _topic_selector
+
     if _topic_selector is None:
-        _topic_selector = TopicSelector()
+        with _singleton_lock:
+            # Double-check after acquiring lock
+            if _topic_selector is None:
+                _topic_selector = TopicSelector()
+
     return _topic_selector
+
+
+def reset_topic_selector() -> None:
+    """
+    Reset the singleton instance. Useful for testing.
+    """
+    global _topic_selector
+    with _singleton_lock:
+        _topic_selector = None
 
 
 # Example usage

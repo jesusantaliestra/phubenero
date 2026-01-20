@@ -1,12 +1,17 @@
-// Landing.jsx - Updated with 30 Exam Types
+// Landing.jsx - Updated with 30 Exam Types (11 Families)
 import React, { useState } from 'react';
 import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
-import { 
-  BookOpen, Headphones, Mic, PenTool, Target, Users, 
-  TrendingUp, Award, Zap, Globe, Building, GraduationCap,
-  Briefcase, Heart, Languages, ChevronDown, ChevronUp
+import {
+  BookOpen,
+  Headphones,
+  Mic,
+  PenTool,
+  Building,
+  GraduationCap,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
 // 30 EXAM TYPES organized by family
@@ -111,15 +116,33 @@ const examFamilies = [
     ]
   },
   {
-    id: 'other',
-    name: 'Other Tests',
-    icon: '🌟',
+    id: 'trinity',
+    name: 'Trinity ISE',
+    icon: '🏛️',
     color: 'bg-gray-600',
-    description: 'Additional recognized tests',
+    description: 'Trinity College London exam',
     variants: [
-      { id: 'trinity_ise', name: 'Trinity ISE', description: 'Trinity College London' },
-      { id: 'oxford_test', name: 'Oxford Test', description: 'Oxford University Press' },
-      { id: 'aptis', name: 'APTIS', description: 'British Council' },
+      { id: 'trinity_ise', name: 'Trinity ISE', description: 'Integrated Skills in English' },
+    ]
+  },
+  {
+    id: 'oxford',
+    name: 'Oxford Test',
+    icon: '📚',
+    color: 'bg-blue-700',
+    description: 'Oxford University Press exam',
+    variants: [
+      { id: 'oxford_test', name: 'Oxford Test', description: 'Modular online test' },
+    ]
+  },
+  {
+    id: 'aptis',
+    name: 'APTIS',
+    icon: '🌐',
+    color: 'bg-teal-600',
+    description: 'British Council exam',
+    variants: [
+      { id: 'aptis', name: 'APTIS', description: 'Flexible English test' },
     ]
   }
 ];
@@ -206,7 +229,7 @@ const Landing = () => {
               <div className="text-sm text-gray-600">Exam Types</div>
             </div>
             <div className="bg-white/50 backdrop-blur rounded-2xl p-4">
-              <div className="text-3xl font-bold text-pink-600">9</div>
+              <div className="text-3xl font-bold text-pink-600">11</div>
               <div className="text-sm text-gray-600">Exam Families</div>
             </div>
             <div className="bg-white/50 backdrop-blur rounded-2xl p-4">

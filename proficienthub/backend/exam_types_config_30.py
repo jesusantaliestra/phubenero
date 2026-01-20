@@ -3,6 +3,8 @@ ProficientHub - 30 Exam Types Configuration
 Complete system with all major English proficiency exams
 """
 
+from typing import List, Dict, Optional, Any
+
 # ============================================================
 # 30 EXAM TYPES - COMPLETE LIST
 # ============================================================
@@ -283,34 +285,81 @@ def get_exam_family(exam_type: str) -> str:
             return family
     return 'other'
 
+# Valid avatar providers
+VALID_AVATAR_PROVIDERS = frozenset(['rive', 'd-id'])
+
+
 def get_section_cost(exam_type: str, section: str, avatar_provider: str = 'rive') -> float:
-    """Get cost for a specific section"""
+    """
+    Get cost for a specific section.
+
+    Args:
+        exam_type: The exam type identifier
+        section: The section name (reading, listening, speaking, writing)
+        avatar_provider: Avatar provider ('rive' or 'd-id')
+
+    Returns:
+        Cost as float
+
+    Raises:
+        ValueError: If avatar_provider is invalid
+    """
+    # Normalize and validate avatar provider
+    avatar_provider = avatar_provider.lower().strip()
+
+    if avatar_provider not in VALID_AVATAR_PROVIDERS:
+        raise ValueError(
+            f"Invalid avatar provider: '{avatar_provider}'. "
+            f"Must be one of: {', '.join(sorted(VALID_AVATAR_PROVIDERS))}"
+        )
+
     if avatar_provider == 'd-id':
         costs = SECTION_COSTS_DID.get(exam_type, {})
     else:
         costs = SECTION_COSTS_RIVE.get(exam_type, {})
-    
+
     return costs.get(section, 0.0)
 
 def get_full_mock_cost(exam_type: str, avatar_provider: str = 'rive') -> float:
-    """Get total cost for a full mock exam"""
+    """
+    Get total cost for a full mock exam.
+
+    Args:
+        exam_type: The exam type identifier
+        avatar_provider: Avatar provider ('rive' or 'd-id')
+
+    Returns:
+        Total cost as float
+
+    Raises:
+        ValueError: If avatar_provider is invalid
+    """
+    avatar_provider = avatar_provider.lower().strip()
+
+    if avatar_provider not in VALID_AVATAR_PROVIDERS:
+        raise ValueError(
+            f"Invalid avatar provider: '{avatar_provider}'. "
+            f"Must be one of: {', '.join(sorted(VALID_AVATAR_PROVIDERS))}"
+        )
+
     if avatar_provider == 'd-id':
         costs = SECTION_COSTS_DID.get(exam_type, {})
     else:
         costs = SECTION_COSTS_RIVE.get(exam_type, {})
-    
+
     return sum(costs.values())
 
 def is_valid_exam_type(exam_type: str) -> bool:
-    """Check if exam type is valid"""
+    """Check if exam type is valid."""
     return exam_type in EXAM_TYPES
 
-def get_all_exam_types() -> list:
-    """Get list of all exam types"""
+
+def get_all_exam_types() -> List[str]:
+    """Get list of all exam types."""
     return EXAM_TYPES.copy()
 
-def get_exam_types_by_family(family: str) -> list:
-    """Get all exam types in a family"""
+def get_exam_types_by_family(family: str) -> List[str]:
+    """Get all exam types in a family."""
     return EXAM_FAMILIES.get(family, [])
 
 def get_exam_info(exam_type: str) -> dict:
